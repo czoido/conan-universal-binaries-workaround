@@ -1,4 +1,4 @@
-# Workaround to use universal binaries with Conan generators
+## Workaround to use universal binaries with Conan generators
 
 Using Conan custom command proposed in
 https://github.com/conan-io/conan-extensions/pull/116 to generate universal binaries from
