@@ -1,3 +1,13 @@
+# Workaround to use universal binaries with Conan generators
+
+Using Conan custom command proposed in
+https://github.com/conan-io/conan-extensions/pull/116 to generate universal binaries from
+already deployed packages. This is just a workaround until native support in Conan for
+universal binaries is added.
+
+To test with a simple example that uses fmt:
+
+```
 conan install . --deployer=full_deploy -s arch=x86_64 -s build_type=Release --build=missing
 conan install . --deployer=full_deploy -s arch=armv8 -s build_type=Release --build=missing
 
@@ -23,3 +33,4 @@ cmake --build .
 lipo example -info
 
 cd ..
+```

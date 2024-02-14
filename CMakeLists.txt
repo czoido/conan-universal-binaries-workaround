@@ -6,7 +6,3 @@ find_package(fmt REQUIRED CONFIG)
 add_executable(example example.cpp)
 target_compile_features(example PRIVATE cxx_std_14)
 target_link_libraries(example PRIVATE fmt::fmt)
-
-set_target_properties(example PROPERTIES
-  OSX_ARCHITECTURES "x86_64;arm64"
-)
