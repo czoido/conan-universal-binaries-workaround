@@ -17,7 +17,10 @@ conan bin:lipo create full_deploy/host --output-folder=universal
 rm build/Release/generators/fmt-release-x86_64-data.cmake
 mv build/Release/generators/fmt-release-armv8-data.cmake build/Release/generators/fmt-release-armv8.x86_64-data.cmake
 
-# substitute the paths in the files full_deploy/host now should point to universal:
+# substitute the paths in the files '/full_deploy/host' now should point 
+# to '/universal' also point to the correct architecture
+# also change the CMAKE_OSX_ARCHITECTURES to include both:
+
 sed -i '' 's|full_deploy/host|universal|g' build/Release/generators/conan_toolchain.cmake
 sed -i '' 's|/armv8|/armv8.x86_64|g' build/Release/generators/conan_toolchain.cmake
 sed -i '' 's|arm64 CACHE|x86_64;arm64 CACHE|g' build/Release/generators/conan_toolchain.cmake
